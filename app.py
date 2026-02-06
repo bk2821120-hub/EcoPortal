@@ -48,6 +48,11 @@ class ContactMessage(db.Model):
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+@app.route("/")
+def home():
+    return "EcoPortal is running"
+
+
 # Routes
 @app.route('/')
 def home():
@@ -240,3 +245,4 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
+
